@@ -36,6 +36,10 @@ composer :
 	@echo "Running Postee UI...."
 	docker-compose up --build
 
+composer-test:
+	@echo "Running Postee UI...."
+	docker run --network container:postee-ui appropriate/curl -s --retry 10 --retry-connrefused http://localhost:8001/
+
 docker-webhook : build
 	@echo "Building image Dockerfile.release...."
 	docker build --no-cache -t aquasec/postee:latest -f Dockerfile.release .

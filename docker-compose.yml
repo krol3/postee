@@ -1,6 +1,7 @@
 version: "3"
 services:
     posteewebhook:
+        container_name: postee
         build:
             context: .
             dockerfile: Dockerfile
@@ -13,6 +14,7 @@ services:
             - "POSTEE_CFG=/server/cfg.yaml"
             - "POSTEE_DEBUG=ON"
     posteeui:
+        container_name: postee-ui
         build:
             context: .
             dockerfile: Dockerfile.ui
