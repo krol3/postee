@@ -5,7 +5,7 @@ on:
   schedule:
     - cron: '41 12 * * 4'
   push:
-    branches: [ "main" ]
+    branches: [ "main", "scorecard" ]
   workflow_dispatch:
   
 # Declare default permissions as read only.
